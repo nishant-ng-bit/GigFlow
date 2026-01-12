@@ -1,22 +1,25 @@
 import mongoose from "mongoose";
 
-const BidSchema = new mongoose.Schema({
-  gigId: {
-    type: String,
-    required: true,
+const bidSchema = new mongoose.Schema(
+  {
+    gigId: {
+      type: String,
+      required: true,
+    },
+    freelancerId: {
+      type: String,
+      required: true,
+    },
+    message: {
+      type: String,
+      required: true,
+    },
+    status: {
+      type: String,
+      required: true,
+    },
   },
-  freelancerId: {
-    type: String,
-    required: true,
-  },
-  message: {
-    type: String,
-    required: true,
-  },
-  status: {
-    type: String,
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
-export default mongoose.model("Bid", BidSchema);
+export default mongoose.model("Bid", bidSchema);
