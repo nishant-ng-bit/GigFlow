@@ -23,5 +23,7 @@ export const createGigs = async (gigData) => {
 export const getGigById = async (gigId) => {
   if (!gigId) throw new Error("Gig ID is required");
   const gig = await Gig.findById(gigId);
+
+  if (!gig) throw new Error("Gig not found");
   return gig;
 };
