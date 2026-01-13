@@ -20,30 +20,41 @@ const Gig = ({ gigId, title, description, budget, ownerId }) => {
   };
   return (
     <div className="w-full bg-white text-slate-800 rounded-lg shadow p-5 hover:shadow-md transition">
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
+      <h2 className="text-xl font-semibold mb-2">
+        {`title: `}
+        {title}
+      </h2>
 
-      <p className="text-sm text-slate-600 mb-4 line-clamp-3">{description}</p>
+      <p className="text-sm text-slate-600 mb-4 line-clamp-3">
+        {`description: `}
+        {description}
+      </p>
 
       <div className="flex justify-between items-center">
-        <span className="font-medium text-blue-600">₹ {budget}</span>
+        <span className="font-medium text-blue-600">
+          {" "}
+          {`budget: `}₹ {budget}
+        </span>
       </div>
-      <div className="flex justify-between">
-        <input
-          onChange={(e) => setMessage(e.target.value)}
-          type="text"
-          name="message"
-          id="message"
-          placeholder="Enter you msg"
-          value={message}
-          className="bg-amber-600 border"
-        />
-        <button
-          onClick={submitHandler}
-          className="px-4 py-1 text-sm rounded bg-blue-600 text-white hover:bg-blue-700 transition"
-        >
-          Apply
-        </button>
-      </div>
+      {user && (
+        <div className="flex justify-between">
+          <input
+            onChange={(e) => setMessage(e.target.value)}
+            type="text"
+            name="message"
+            id="message"
+            placeholder="Enter you msg"
+            value={message}
+            className="bg-amber-600 border"
+          />
+          <button
+            onClick={submitHandler}
+            className="px-4 py-1 text-sm rounded bg-blue-600 text-white hover:bg-blue-700 transition"
+          >
+            Apply
+          </button>
+        </div>
+      )}
       <div className="mt-2">
         {user && user._id === ownerId && (
           <Link
