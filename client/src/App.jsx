@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage, LoginPage, RegisterPage, PostGig, BidsPage } from "./pages";
-import ProtectedRoute from "./components/ProtectedRoute";
-import AppLayout from "./layouts/AppLayout";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import AppLayout from "./layouts/AppLayout.jsx";
 
 function App() {
   const router = createBrowserRouter([
