@@ -7,6 +7,6 @@ import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 export const bidsRoute = (router) => {
   router.post("/bids", authMiddleware, createBidController);
-  router.get("/bids/:gigId", authMiddleware, getBidsByGigIdController);
-  router.patch("/bids/:bidId/hire", authMiddleware, hireBidController);
+  router.get("/bids/:gigId", authMiddleware, getBidsByGigIdController); //Owner only
+  router.patch("/bids/:bidId/hire", authMiddleware, hireBidController); //Owner only
 };

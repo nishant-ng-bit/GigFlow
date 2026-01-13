@@ -9,6 +9,8 @@ export const createBidController = async (req, res) => {
     const bidData = req.body;
     bidData.freelancerId = req.user.id;
 
+    if (!bidData.freelancerId) throw new Error("freelancerId is required");
+
     const bid = await createBid(bidData);
     res.status(200).json(bid);
   } catch (error) {
@@ -18,8 +20,7 @@ export const createBidController = async (req, res) => {
 
 export const getBidsByGigIdController = async (req, res) => {
   try {
-    req.params.userId = req.user.id;
-    const bids = await getBidsByGigId(req.params.gigId, req.params.userId);
+    const bids = await getBidsByGigId(req.params.gigId, req.user.id);
     res.status(200).json(bids);
   } catch (error) {
     res.status(500).json({ error: error.message });
