@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../providers/authProvider";
-
+import { useAuth } from "../providers/AuthProvider";
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
   const navigate = useNavigate();

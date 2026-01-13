@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../providers/authProvider";
+import { useAuth } from "../providers/AuthProvider";
 import { useEffect, useState } from "react";
 import { getGigs } from "../api/gigs.api";
 import Gig from "../components/Gig";

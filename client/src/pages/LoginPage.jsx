@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Form from "../components/Form";
 import { loginUser } from "../api/auth.api";
-import { useAuth } from "../providers/authProvider";
+import { useAuth } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 const LoginPage = () => {

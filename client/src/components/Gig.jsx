@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { postBid } from "../api/bids.api";
 import toast from "react-hot-toast";
-import { useAuth } from "../providers/authProvider";
+import { useAuth } from "../providers/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Gig = ({ gigId, title, description, budget, ownerId }) => {

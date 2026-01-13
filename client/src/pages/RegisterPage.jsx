@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 import { registerUser } from "../api/auth.api";
-import { useAuth } from "../providers/authProvider";
+import { useAuth } from "../providers/AuthProvider";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 
